@@ -1,3 +1,5 @@
 from django.test import TestCase
 
-# Create your tests here.
+class TestSnippets(TestCase):
+    def test_tmp(self):
+        self.assertTrue(True)
