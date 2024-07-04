@@ -6,15 +6,19 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      - image: cimg/python:3.12
-
+      - image: cimg/base:2021.04
     steps:
       - checkout
-      - python/install-packages:
-          pkg-manager: pip
       - run:
-          name: Run tests
-          command: pytest
+          name: First Step
+          command: |
+            echo "Hello World"
+            echo "This is the delivery pipeline"
+      - run:
+          name: Second Step
+          command: |
+            ls -la
+            echo "The files in my repo"
 
 workflows:
   sample:
